@@ -16,3 +16,6 @@ iptables -P OUTPUT ACCEPT
 
 eth1 prywatna
 eth2 publiczna
+
+sprawdzanie który port SPICE 
+sudo ss -tuln | grep spice
