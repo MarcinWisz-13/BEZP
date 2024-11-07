@@ -1,7 +1,7 @@
-ad1
+
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A FORWARD -p tcp --dport 80 -o -d 192.168.6.130 -j ACCEPT
+iptables -A FORWARD -p tcp --dport 80 -d 192.168.6.130 -j ACCEPT
 iptables -A FORWARD -p tcp --dport 22 -d 192.168.6.130 -i eth1 -j ACCEPT
 iptables -A FORWARD -p icmp -i eth0 -o eth2 -j ACCEPT
 iptables -A FORWARD -o eth1 -j DROP
@@ -10,3 +10,7 @@ iptables -A FORWARD -o eth1 -j DROP
 iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -P OUTPUT ACCEPT
+
+
+eth1 prywatna
+eth2 publiczna
